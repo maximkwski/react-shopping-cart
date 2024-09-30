@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { ThemeProvider } from "styled-components"
 import GlobalStyles from './components/styles/Global.styled'
+import Header from './components/Header'
 
 function App() {
 
   const theme = {
     colors: {
       header: '#ebfbff',
-      body: '#fff',
+      body: 'hsl(20, 50%, 98%)',
       footer: '#003333'
     },
     mobile: '768px'
@@ -17,7 +18,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <>
       <GlobalStyles />
-      <h1>Shopping Cart</h1>
+      <Header />
       </>
     </ThemeProvider>
   )

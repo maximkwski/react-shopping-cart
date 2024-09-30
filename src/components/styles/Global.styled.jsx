@@ -9,12 +9,17 @@ const GlobalStyles = createGlobalStyle`
     
     body {
         margin: 0;
-        font-size: 1.3rem;
-        font-family: Montserrat, sans-serif;
+        font-size: 1.2rem;
+        background: ${ ( {theme} ) => theme.colors.body};;
+        font-family: "Red Hat Text", sans-serif;
     }
 
     img {
         max-width: 100%;
+    }
+
+    h1,h2,h3,h4 {
+        margin: 0;
     }
 
     p {
