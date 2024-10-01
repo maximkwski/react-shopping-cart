@@ -9,7 +9,7 @@ export default function Header() {
     <StyledHeader>
         <Container>
             <Flex style={{ justifyContent: 'space-between'}}>
-                <h1>Top Desserts Shop</h1>
+                <h1>TOP Desserts Shop</h1>
                 <a href=""><FaCartShopping size={24} style={{ color: 'hsl(14, 86%, 42%)' }} /></a>
             </Flex>
         </Container>
