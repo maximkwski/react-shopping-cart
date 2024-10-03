@@ -1,6 +1,7 @@
 import { Container } from './styles/Container.styled'
 import { StyledCart, StyledEmptyDiv } from './styles/Cart.styled'
 import { Flex } from './styles/Flex.styled'
+import CartItem from './CartItem'
 
 export default function Cart() {
   return (
@@ -8,10 +9,14 @@ export default function Cart() {
         <StyledCart>
             <div>
                 <h2>Your Cart {'(0)'}</h2>
-                <StyledEmptyDiv>
+                {/* <StyledEmptyDiv>
                     <img src="./assets/images/illustration-empty-cart.svg" alt="empty cart" />
                     <p>Your added items will apper here</p>
-                </StyledEmptyDiv>
+                </StyledEmptyDiv> */}
+                <ul>
+                    <CartItem />
+                    <CartItem />
+                </ul>
             </div>
         </StyledCart>
     </Container>

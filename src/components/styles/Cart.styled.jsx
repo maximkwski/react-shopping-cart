@@ -12,6 +12,11 @@ export const StyledCart = styled.div`
         color: hsl(12, 20%, 44%);
         font-weight: 500;
     }
+
+    &>div>ul {
+        padding: 0;
+        list-style: none;
+    }
 `
 
 export const StyledEmptyDiv = styled.div`
