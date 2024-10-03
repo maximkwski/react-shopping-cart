@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+import Button from './AddButton'
 import { StyledCard, StyledCardContainer, StyledImgContainer, StyledBtnContainer } from './styles/Card.styled'
 
 export default function Card({item: {image, name, category, price}}) {
@@ -10,7 +10,7 @@ export default function Card({item: {image, name, category, price}}) {
                 <img src={image.mobile} alt={name} />
             </StyledImgContainer>
             <StyledBtnContainer>
-                <Button />
+                <Button title={'Add to Cart'}/>
             </StyledBtnContainer>
         </StyledCardContainer>
         <div>
