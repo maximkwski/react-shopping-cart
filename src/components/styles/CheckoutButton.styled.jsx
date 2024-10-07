@@ -9,4 +9,9 @@ export const StyledCheckoutButton = styled.button`
     color: ${ ( {theme} ) => theme.colors.body};
     padding: 1em 1.5em;
     margin: 2em 0 1em;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darkred;
+    }
 `

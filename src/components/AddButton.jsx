@@ -1,12 +1,38 @@
 import React from 'react'
-import { MdAddShoppingCart } from "react-icons/md";
-import { StyledButton } from './styles/AddButton.styled'
+import { MdAddShoppingCart, MdRemove, MdAdd } from "react-icons/md";
+import { StyledButton, StyledCounterButton } from './styles/AddButton.styled'
 
-export default function Button({title}) {
+
+export default function Button({title, onAdd, onRemove, count = 0}) {
+  const handleAdd = () => {
+    onAdd();
+  }
+
+  const handleRemove = () => {
+    if (count > 0) {
+      onRemove();
+    }
+  }
+  
   return (
-    <StyledButton>
-      <MdAddShoppingCart size={20}/>
-      <span>{title}</span>
+    <StyledButton count={count}>
+      {count === 0 ? ( 
+        <>
+          <MdAddShoppingCart size={20}/>
+          <span onClick={handleAdd}>{title}</span>
+        </>
+      ):(
+        <>
+          <StyledCounterButton onClick={handleRemove}>
+            <MdRemove size={20} />
+          </StyledCounterButton>
+          <span>{count}</span>
+          <StyledCounterButton onClick={handleAdd}>
+            <MdAdd size={20} />
+          </StyledCounterButton>
+        </>
+      )}
+      
     </StyledButton>
   )
 }

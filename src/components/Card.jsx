@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from './AddButton'
 import { StyledCard, StyledCardContainer, StyledImgContainer, StyledBtnContainer } from './styles/Card.styled'
 
 export default function Card({item: {image, name, category, price}}) {
+    const [count, setCount] = useState(0);
+
+    const handleAdd = () => {
+        setCount(count + 1);
+    }
+
+    const handleRemove = () => {
+        if (count > 0) {
+          setCount(count - 1);
+        }
+    };
+
   return (
     <StyledCard>
         <StyledCardContainer>
@@ -10,7 +22,11 @@ export default function Card({item: {image, name, category, price}}) {
                 <img src={image.mobile} alt={name} />
             </StyledImgContainer>
             <StyledBtnContainer>
-                <Button title={'Add to Cart'}/>
+                <Button title={'Add to Cart'}
+                onAdd={handleAdd}
+                onRemove={handleRemove}
+                count={count}
+                />
             </StyledBtnContainer>
         </StyledCardContainer>
         <div>

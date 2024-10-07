@@ -12,7 +12,7 @@ export default function CartItem() {
                 </div>
             </div>
             <div>
-                <div><TiDeleteOutline size={24}/></div>
+                <div className='delete'><TiDeleteOutline size={24}/></div>
             </div>
     </StyledCartItem>
   )
