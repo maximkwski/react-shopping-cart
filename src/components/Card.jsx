@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import Button from './AddButton'
 import { StyledCard, StyledCardContainer, StyledImgContainer, StyledBtnContainer } from './styles/Card.styled'
+import { useCart } from '../CartContext';
 
-export default function Card({item: {image, name, category, price}}) {
-    const [count, setCount] = useState(0);
+export default function Card({ item }) {
+    const { addToCart, updateQuantity, cartItems } = useCart();
+    const cartItem = cartItems.find((i) => i.id === item.name);
+    const count = cartItem ? cartItem.quantity : 0;
 
     const handleAdd = () => {
-        setCount(count + 1);
+        addToCart({...item, id: item.name});
     }
 
     const handleRemove = () => {
         if (count > 0) {
-          setCount(count - 1);
+          updateQuantity(item.name, count - 1);
         }
     };
 
@@ -19,7 +22,7 @@ export default function Card({item: {image, name, category, price}}) {
     <StyledCard>
         <StyledCardContainer>
             <StyledImgContainer>
-                <img src={image.mobile} alt={name} />
+                <img src={item.image.mobile} alt={item.name} />
             </StyledImgContainer>
             <StyledBtnContainer>
                 <Button title={'Add to Cart'}
@@ -30,9 +33,9 @@ export default function Card({item: {image, name, category, price}}) {
             </StyledBtnContainer>
         </StyledCardContainer>
         <div>
-            <p>{category}</p>
-            <h3>{name}</h3>
-            <h4>${price.toFixed(2)}</h4>
+            <p>{item.category}</p>
+            <h3>{item.name}</h3>
+            <h4>${item.price.toFixed(2)}</h4>
         </div>
     </StyledCard>
   )

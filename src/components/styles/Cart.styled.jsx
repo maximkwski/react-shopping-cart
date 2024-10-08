@@ -15,7 +15,7 @@ export const StyledCart = styled.div`
 
 `
 
-export const StyledEmptyDiv = styled.div`
+export const StyledEmptyCart = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;

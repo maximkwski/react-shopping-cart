@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Cart from './components/Cart'
 import Card from './components/Card'
 import data from '../data.json'
+import { CartProvider } from './CartContext';
 
 
 function App() {
@@ -20,16 +21,16 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <>
-      <GlobalStyles />
-      <Header />
-      <Container style={{marginBottom: '1em'}} >
-          {data.map((item, index) => (
-            <Card key={index} item={item}/>
-          ))}
-      </Container>
-      <Cart />
-      </>
+      <CartProvider>
+        <GlobalStyles />
+        <Header />
+        <Container style={{marginBottom: '1em'}} >
+            {data.map((item, index) => (
+              <Card key={index} item={item}/>
+            ))}
+        </Container>
+        <Cart />
+      </CartProvider>
     </ThemeProvider>
   )
 }
