@@ -27,7 +27,16 @@ export const StyledButton = styled.button`
     }
 `
 
-export const StyledCounterButton = styled.button`
+export const StyledCounterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`
+
+
+
+export const StyledCounterButton = styled.span`
     display: flex;
     align-items: center;
     color: #fff;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdAddShoppingCart, MdRemove, MdAdd } from "react-icons/md";
-import { StyledButton, StyledCounterButton } from './styles/AddButton.styled'
+import { StyledButton, StyledCounterButton, StyledCounterContainer } from './styles/AddButton.styled'
 
 
 export default function Button({title, onAdd, onRemove, count = 0}) {
@@ -22,7 +22,7 @@ export default function Button({title, onAdd, onRemove, count = 0}) {
           <span onClick={handleAdd}>{title}</span>
         </>
       ):(
-        <>
+        <StyledCounterContainer>
           <StyledCounterButton onClick={handleRemove}>
             <MdRemove size={20} />
           </StyledCounterButton>
@@ -30,7 +30,7 @@ export default function Button({title, onAdd, onRemove, count = 0}) {
           <StyledCounterButton onClick={handleAdd}>
             <MdAdd size={20} />
           </StyledCounterButton>
-        </>
+        </StyledCounterContainer>
       )}
       
     </StyledButton>
