@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { StyledCheckoutButton } from "./CheckoutButton.styled";
 
 export const StyledConfirmationModal = styled.div`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: hsl(14, 65%, 9%); 
   position: fixed;
   top: 0;
@@ -20,8 +20,10 @@ export const StyledModalContent = styled.div`
   background-color: white;
   padding: 2rem;
   border-radius: 8px;
-  max-width: 500px;
-  width: 90%;
+  overflow-y: auto;
+  width: 500px;
+  max-width: 90%;
+  max-height: 90vh;
 
   h2{
     margin-top: 0.5em;
@@ -39,6 +41,8 @@ export const StyledOrderList = styled.ul`
     padding: 1em;
     border-radius: 8px;
     background-color: ${({theme}) => theme.colors.body};
+    max-height: 50vh;
+  overflow-y: auto;
 `
 
 export const StyledOrderItem = styled.li`
