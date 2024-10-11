@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     
     body {
         margin: 0;
-        font-size: 1.2rem;
+        font-size: 1rem;
         background: ${ ( {theme} ) => theme.colors.body};
         font-family: "Red Hat Text", sans-serif;
     }

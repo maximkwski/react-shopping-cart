@@ -1,17 +1,28 @@
+import { useState } from "react";
 import { WiSmoke } from "react-icons/wi";
 import { Container } from './styles/Container.styled'
 import { StyledCart, StyledEmptyCart, StyledCarbonInfo, StyledFullCart } from './styles/Cart.styled'
 import CartItem from './CartItem'
 import CheckoutButton from "./CheckoutButton";
+import ConfirmationModal from "./ConfirmationModal";
 import { useCart } from "../CartContext";
 
 
 export default function Cart() {
   const { cartItems } = useCart();
+  const [showModal, setShowModal] = useState(false);
+
   const totalItems = cartItems.reduce((sum,item) => sum + item.quantity, 0);
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  
+  const handleCheckout = () => {
+    setShowModal(true);
+  }
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  }
+
   return (
     <Container>
         <StyledCart>
@@ -40,11 +51,12 @@ export default function Cart() {
                                 <span>This is <strong>carbon-neutral</strong> delivery</span>
                             </p>
                         </StyledCarbonInfo>
-                        <CheckoutButton />
+                        <CheckoutButton onClick={handleCheckout}/>
                     </StyledFullCart>
                 )}
             </div>
         </StyledCart>
+        {showModal && <ConfirmationModal onClose={handleCloseModal}/>}
     </Container>
   )
 }
