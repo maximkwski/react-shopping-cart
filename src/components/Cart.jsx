@@ -51,7 +51,7 @@ export default function Cart() {
                                 <span>This is <strong>carbon-neutral</strong> delivery</span>
                             </p>
                         </StyledCarbonInfo>
-                        <CheckoutButton onClick={handleCheckout}/>
+                        <CheckoutButton onClick={handleCheckout} />
                     </StyledFullCart>
                 )}
             </div>

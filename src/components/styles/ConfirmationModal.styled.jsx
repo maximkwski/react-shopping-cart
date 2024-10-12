@@ -14,6 +14,7 @@ export const StyledConfirmationModal = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+
 `
 
 export const StyledModalContent = styled.div`
