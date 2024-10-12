@@ -4,18 +4,20 @@ import { StyledButton, StyledCounterButton, StyledCounterContainer } from './sty
 
 
 export default function Button({title, onAdd, onRemove, count = 0}) {
-  const handleAdd = () => {
+  const handleAdd = (e) => {
+    e.stopPropagation();
     onAdd();
   }
 
-  const handleRemove = () => {
+  const handleRemove = (e) => {
+    e.stopPropagation();
     if (count > 0) {
       onRemove();
     }
   }
   
   return (
-    <StyledButton count={count}>
+    <StyledButton count={count} onClick={count === 0 ? handleAdd : undefined} >
       {count === 0 ? ( 
         <>
           <MdAddShoppingCart size={20}/>
