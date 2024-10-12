@@ -4,7 +4,7 @@ import { StyledCard, StyledCardContainer, StyledImgContainer, StyledBtnContainer
 import { useCart } from '../CartContext';
 
 export default function Card({ item }) {
-    const { addToCart, updateQuantity, cartItems } = useCart();
+    const { addToCart, updateQuantity, cartItems, removeFromCart } = useCart();
     const cartItem = cartItems.find((i) => i.id === item.name);
     const count = cartItem ? cartItem.quantity : 0;
 
@@ -13,8 +13,10 @@ export default function Card({ item }) {
     }
 
     const handleRemove = () => {
-        if (count > 0) {
+        if (count > 1) {
           updateQuantity(item.name, count - 1);
+        } else if (count === 1) {
+            removeFromCart(item.name);
         }
     };
 
