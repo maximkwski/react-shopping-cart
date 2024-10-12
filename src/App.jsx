@@ -16,7 +16,9 @@ function App() {
       body: 'hsl(20, 50%, 98%)',
       footer: '#003333'
     },
-    mobile: '768px'
+    mobile: '375px',
+    tablet: '768px',
+    desctop: '1024px'
   }
 
   return (

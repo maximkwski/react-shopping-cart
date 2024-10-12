@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from './AddButton'
 import { StyledCard, StyledCardContainer, StyledImgContainer, StyledBtnContainer } from './styles/Card.styled'
 import { useCart } from '../CartContext';
+import ResponsiveImage from './ResponsiveImage';
 
 export default function Card({ item }) {
     const { addToCart, updateQuantity, cartItems, removeFromCart } = useCart();
@@ -24,7 +25,7 @@ export default function Card({ item }) {
     <StyledCard>
         <StyledCardContainer>
             <StyledImgContainer>
-                <img src={item.image.mobile} alt={item.name} />
+                <ResponsiveImage image={item.image} name={item.name}/>
             </StyledImgContainer>
             <StyledBtnContainer>
                 <Button title={'Add to Cart'}
