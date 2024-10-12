@@ -9,7 +9,7 @@ export const StyledButton = styled.button`
     background-color: ${props => props.count > 0 ? 'hsl(14, 86%, 42%)' : 'white'};
     border: 1px solid hsl(14, 25%, 72%);
     border-radius: 25px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 
     &:hover {
         cursor: pointer;
@@ -24,6 +24,20 @@ export const StyledButton = styled.button`
 
     & > svg {
         color: hsl(14, 86%, 42%);
+    }
+
+    @media (min-width: ${props => props.theme.tablet}) {
+        width: 130px;
+        height: 40px;
+        padding: 0.6em 1em;
+        font-size: 12px;
+    }
+
+    @media (min-width: ${props => props.theme.desktop}) {
+        width: 120px;
+        height: 35px;
+        padding: 0.5em 0.8em;
+        font-size: 11px;
     }
 `
 

@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Button from './AddButton'
 import { StyledCard, StyledCardContainer, StyledImgContainer, StyledBtnContainer } from './styles/Card.styled'
 import { useCart } from '../CartContext';

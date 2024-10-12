@@ -24,7 +24,7 @@ export default function Cart() {
   }
 
   return (
-    <Container>
+    <>
         <StyledCart>
             <div>
                 <h2>Your Cart {`(${totalItems})`}</h2>
@@ -57,6 +57,6 @@ export default function Cart() {
             </div>
         </StyledCart>
         {showModal && <ConfirmationModal onClose={handleCloseModal}/>}
-    </Container>
+    </>
   )
 }

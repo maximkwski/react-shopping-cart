@@ -1,13 +1,13 @@
-import { useState } from 'react'
 import { ThemeProvider } from "styled-components"
 import { Container } from './components/styles/Container.styled'
+import { StyledMain } from './components/styles/Main.styled'
 import GlobalStyles from './components/styles/Global.styled'
 import Header from './components/Header'
 import Cart from './components/Cart'
 import Card from './components/Card'
 import data from '../data.json'
 import { CartProvider } from './CartContext';
-
+import { StyledCardList } from './components/styles/CardList.styled'
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
     },
     mobile: '375px',
     tablet: '768px',
-    desctop: '1024px'
+    desktop: '1024px'
   }
 
   return (
@@ -26,12 +26,16 @@ function App() {
       <CartProvider>
         <GlobalStyles />
         <Header />
-        <Container style={{marginBottom: '1em'}} >
-            {data.map((item, index) => (
-              <Card key={index} item={item}/>
-            ))}
+        <Container>
+          <StyledMain>
+            <StyledCardList >
+                {data.map((item, index) => (
+                  <Card key={index} item={item}/>
+                ))}
+            </StyledCardList>
+            <Cart />
+          </StyledMain>
         </Container>
-        <Cart />
       </CartProvider>
     </ThemeProvider>
   )

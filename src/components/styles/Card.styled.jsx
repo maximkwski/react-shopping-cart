@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.div`
+    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     margin-top: 1.5em;
 
     h4 {
@@ -16,6 +20,9 @@ export const StyledCard = styled.div`
     p {
        color: hsl(12, 20%, 44%)
     }
+    @media (min-width: ${props => props.theme.tablet}) {
+        font-size: 0.9em;
+    }
 `
 
 export const StyledCardContainer = styled.div`
@@ -23,16 +30,19 @@ export const StyledCardContainer = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
-
-    margin-bottom: 1em;
+    /* flex-grow: 1; */
+    margin-bottom: 2em;
 `
 
 export const StyledImgContainer = styled.div`
     width: 100%;
+    /* aspect-ratio: 1 / 1; */
+    overflow: hidden;
 
     & > img {
         width: 100%;
         height: auto;
+        /* object-fit: cover; */
         display: block;
         border-radius: 8px;
     }

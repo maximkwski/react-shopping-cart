@@ -5,12 +5,20 @@ export const StyledCart = styled.div`
     border-radius: 8px;
     padding: 1em;
     margin-bottom: 1.5em;
+    height: fit-content;
     h2 {
         color: hsl(14, 86%, 42%);
     }
     p {
         color: hsl(12, 20%, 44%);
         font-weight: 500;
+    }
+
+    @media (min-width: ${props => props.theme.tablet}) {
+        position: sticky;
+        top: 2rem;
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
     }
 
 `
