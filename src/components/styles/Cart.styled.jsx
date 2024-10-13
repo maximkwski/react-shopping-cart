@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledCheckoutButton } from "./CheckoutButton.styled";
 
 export const StyledCart = styled.div`
     background-color: white;
@@ -6,6 +7,9 @@ export const StyledCart = styled.div`
     padding: 1em;
     margin-bottom: 1.5em;
     height: fit-content;
+
+   
+
     h2 {
         color: hsl(14, 86%, 42%);
     }
@@ -32,6 +36,24 @@ export const StyledEmptyCart = styled.div`
     height: 300px;
     
 `
+
+export const ContinueShoppingButton = styled(StyledCheckoutButton)`
+  /* display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: ${(props) => props.theme.colors.body};
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.footer};
+  } */
+`;
 
 export const StyledCarbonInfo = styled.div`
     display: flex;

@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { useCart } from "../CartContext";
 import { WiSmoke } from "react-icons/wi";
 import { Container } from './styles/Container.styled'
-import { StyledCart, StyledEmptyCart, StyledCarbonInfo, StyledFullCart } from './styles/Cart.styled'
+import ConfirmationModal from "./ConfirmationModal";
 import CartItem from './CartItem'
 import CheckoutButton from "./CheckoutButton";
-import ConfirmationModal from "./ConfirmationModal";
-import { useCart } from "../CartContext";
+import { StyledCart, StyledEmptyCart, StyledCarbonInfo, StyledFullCart, ContinueShoppingButton } from './styles/Cart.styled'
 
 
 export default function Cart() {
@@ -30,10 +30,13 @@ export default function Cart() {
                 <h2>Your Cart {`(${totalItems})`}</h2>
                 
                 {cartItems.length === 0 ? (
-                    <StyledEmptyCart>
-                        <img src="./assets/images/illustration-empty-cart.svg" alt="empty cart" />
-                        <p>Your added items will apper here</p>
-                    </StyledEmptyCart>
+                    <>
+                        <StyledEmptyCart>
+                            <img src="./assets/images/illustration-empty-cart.svg" alt="empty cart" />
+                            <p>Your added items will apper here</p>
+                        </StyledEmptyCart>
+                        <ContinueShoppingButton to="/">Continue Shopping</ContinueShoppingButton>
+                    </>
                 ) : (
                     <StyledFullCart>
                         <ul>
