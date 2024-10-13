@@ -17,7 +17,11 @@ export const StyledHeader = styled.header`
             font-weight: 500;
             font-size: 0.9em;
             color: hsl(14, 86%, 42%);
+        }
 
+
+        @media (min-width: ${props => props.theme.tablet}) {
+            display: none;
         }
     }
 `

@@ -16,7 +16,7 @@ export default function Header() {
                 <h1>TOP Desserts Shop</h1>
                 <Link to='/cart'>
                   <FaCartShopping size={28} style={{ color: 'hsl(14, 86%, 42%)' }} />
-                  <span>{totalItems}</span>
+                  <span style={{display: totalItems === 0 && 'none'}}>{totalItems}</span>
                 </Link>
             </Flex>
         </Container>
