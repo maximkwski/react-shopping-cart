@@ -51,6 +51,7 @@ Users should be able to:
 ### What I learned
 Practiced React.js with implementing React concepts such as: React Routes, Context API, styling with styled-components technique 
 
+```css
 /*using props and conditions for styling elements */
 div {
     color: ${props => props.count > 0 ? '#fff' : 'hsl(14, 65%, 9%)'};   
