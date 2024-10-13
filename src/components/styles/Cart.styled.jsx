@@ -37,22 +37,13 @@ export const StyledEmptyCart = styled.div`
     
 `
 
-export const ContinueShoppingButton = styled(StyledCheckoutButton)`
-  /* display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: ${(props) => props.theme.colors.body};
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
 
-  &:hover {
-    background-color: ${(props) => props.theme.colors.footer};
-  } */
+export const ContinueShoppingButton = styled(StyledCheckoutButton)`
+ width: fit-content;
+
+ @media (min-width: ${props => props.theme.tablet}) {
+    display: none;
+ }
 `;
 
 export const StyledCarbonInfo = styled.div`

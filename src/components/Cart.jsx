@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { useCart } from "../CartContext";
+import { Link } from "react-router-dom";
 import { WiSmoke } from "react-icons/wi";
-import { Container } from './styles/Container.styled'
+import { useCart } from "../CartContext";
 import ConfirmationModal from "./ConfirmationModal";
 import CartItem from './CartItem'
 import CheckoutButton from "./CheckoutButton";
+import { Flex } from "./styles/Flex.styled";
 import { StyledCart, StyledEmptyCart, StyledCarbonInfo, StyledFullCart, ContinueShoppingButton } from './styles/Cart.styled'
 
 
@@ -35,7 +36,11 @@ export default function Cart() {
                             <img src="./assets/images/illustration-empty-cart.svg" alt="empty cart" />
                             <p>Your added items will apper here</p>
                         </StyledEmptyCart>
-                        <ContinueShoppingButton to="/">Continue Shopping</ContinueShoppingButton>
+                        <Flex style={{justifyContent: 'center'}}>
+                            <Link to="/">
+                                <ContinueShoppingButton>Continue Shopping</ContinueShoppingButton>
+                            </Link>
+                        </Flex>
                     </>
                 ) : (
                     <StyledFullCart>
@@ -55,6 +60,9 @@ export default function Cart() {
                             </p>
                         </StyledCarbonInfo>
                         <CheckoutButton onClick={handleCheckout} />
+                        <Link to="/">
+                                <ContinueShoppingButton style={{width: '100%', margin: '0'}}>Continue Shopping</ContinueShoppingButton>
+                        </Link>
                     </StyledFullCart>
                 )}
             </div>

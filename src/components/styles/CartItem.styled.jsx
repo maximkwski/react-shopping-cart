@@ -42,5 +42,14 @@ export const StyledCartItem = styled.li`
         font-weight: 500;
     }
 
-   
+   input {
+    max-width: 100px;
+    border: 1px solid hsl(12, 20%, 44%);
+    border-radius: 8px;
+    padding: 4px;
+    &:focus {
+        outline: none;
+        border: 2px solid hsl(14, 86%, 42%);
+    }
+   }
 `
